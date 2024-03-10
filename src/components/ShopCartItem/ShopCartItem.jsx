@@ -6,7 +6,8 @@ export const ShopCartItem = ({value}) => {
     <div className={css.wrapper}>
   <li className={css.item}>
     <p>{value.name}</p>
-    <p>{value.price}</p>
+    <p>Price:{value.price}</p>
+    <input type="number" min="1" max="100" step="1" />
     </li>
   </div>
 );}

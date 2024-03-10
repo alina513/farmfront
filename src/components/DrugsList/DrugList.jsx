@@ -9,7 +9,7 @@ export const DrugsList = () => {
   return (
     <ul className={css.list}>
       {drugs.map(drug => (
-        <Drug value={drug} key={drug.id} />
+        <Drug value={drug} key={drug._id} />
       ))}
     </ul>
   );

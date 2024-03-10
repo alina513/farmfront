@@ -1,11 +1,10 @@
 import { createSlice} from "@reduxjs/toolkit";
-import { fetchCartItems } from "../redux/operations";
+import { fetchCartItems, sendItemsToBackend } from "../redux/operations";
 
 
 const shopInitialState = {
     items: [],
     isLoading: false,
-    // error: null,
   };
   
   const shopSlice = createSlice({
@@ -23,13 +22,22 @@ const shopInitialState = {
         })
         .addCase(fetchCartItems.rejected, (state) => {
           state.isLoading = false;
-        });
+        })
+      .addCase(sendItemsToBackend.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(sendItemsToBackend.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        // state.items = action.payload;
+      })
+      .addCase(sendItemsToBackend.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
     }
-  });
+  })
  
-  
-  // const drugsReducer = drugsSlice.reducer;
-  // export default drugsReducer;
-  export const { setCartItems } = shopSlice.actions;
-   const {shopReducer}  = shopSlice.reducer;
+
+   const shopReducer  = shopSlice.reducer;
    export default shopReducer;

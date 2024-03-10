@@ -1,0 +1,13 @@
+.button {
+    width: 100px;
+    background-color: blueviolet;
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: large;
+    display: flex;
+
+  position: absolute;
+  top: 98%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}

@@ -1,38 +1,45 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-// import { ContactForm } from '../components/ContactForm/ContactForm.jsx';
-
-import { setCartItems } from '../redux/shopSlice.js';
-
-// import { selectIsLoading } from '../redux/selectors.js';
-// import { Toaster } from 'react-hot-toast';
-// import { Loader } from 'components/Loader.jsx';
-// import { selectError } from '../redux/selectors.js';
-import {ShopingCartList} from "../components/ShopCartList/ShopCartList.jsx"
+import { useDispatch} from 'react-redux';
+import { fetchCartItems } from '../redux/operations';
+import {ShopingCartList} from "../components/ShopCartList/ShopCartList.jsx";
+import { Form } from "../components/Form/Form.jsx";
+import { Button } from '../components/Button/Button';
+import { TotalPrice } from '../components/TotalPrice/TotalPrice';
 
 
 const styles = {
-  title: {
-    fontWeight: 600,
-    fontSize: 30,
-    textAlign: 'center',
+  container: {
+    minHeight: 'calc(100vh - 50px)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // backgroundColor: '#EBFAAE  ',
+    minWidth: '100%',
+  },
+  wraper: {
+    display: 'block',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    position: 'relative'
+  
   },
 };
 
 export default function ContactsIn() {
     const dispatch = useDispatch();
-    // const isLoading = useSelector(selectIsLoading);
-    // const error = useSelector(selectError);
    
     useEffect(() => {
-      const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      dispatch(setCartItems(storedCartItems));
+      dispatch(fetchCartItems());
     }, [dispatch]);
   
     return (
-      <div>
-      {/* <Toaster /> */}
+      <div style={styles.wraper}>
+      <div style={styles.container}>
+        <Form/>
       < ShopingCartList/>
+      </div>
+      <TotalPrice/>
+      <Button/>
       </div>
     );
   }

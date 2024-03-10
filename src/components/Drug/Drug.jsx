@@ -1,13 +1,6 @@
 import css from './Drug.module.css';
-import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/operations';
 
 export const Drug = ({value}) => { 
-  // const dispatch = useDispatch();
-  // const handleDelete = () => {
-  //   dispatch(deleteContact(value.id));
-  // };
-  // 
   
   const handleAddToCart = () => {
     // Отримуємо дані з localStorage або ініціалізуємо порожній масив, якщо дані відсутні
@@ -23,7 +16,7 @@ export const Drug = ({value}) => {
     <div className={css.wrapper}>
   <li className={css.item}>
     <p>{value.name}</p>
-    <p>{value.price}</p>
+    <p>Price:{value.price}</p>
     <button
       className={css.button}
       type="button"

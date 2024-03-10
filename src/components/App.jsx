@@ -13,12 +13,6 @@ const ShopPage = lazy(() => import('../pages/Shop'));
 const ShopCartPage = lazy(() => import('../pages/ShopCart'));
 
 export const App = () => {
-  // const dispatch = useDispatch();
-  // const { isRefreshing } = useAuth();
-  // useEffect(() => {
-  //   dispatch(refreshUser());
-  // }, [dispatch]);
-
   
   return  (
     <Routes>
