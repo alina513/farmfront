@@ -1,0 +1,17 @@
+.link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 700;
+    color: #2a363b;
+    border: solid 1px blue;
+    border-radius: 50px;
+    background-color: aqua;
+    margin-bottom: 7px;
+  }
+  
+ .container {
+  display: flex;
+  margin-top: 10px;
+  gap:30px;
+ }
