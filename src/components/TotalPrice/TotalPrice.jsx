@@ -1,3 +1,4 @@
+import css from "./TotalPrice.module.css"
 import {selectCartItems} from "../../redux/selectors";
 import { useSelector } from "react-redux";
 export const TotalPrice = () =>{
@@ -6,7 +7,7 @@ export const TotalPrice = () =>{
     const totalPrice = items.reduce((total, item) => total + parseInt(item.price), 0);
     return (
         <>
-        <p>Total price:{totalPrice}</p>
+        <p className={css.total}>Total price:{totalPrice}</p>
         </>
     )
 }

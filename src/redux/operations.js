@@ -56,8 +56,8 @@ export const sendItemsToBackend = createAsyncThunk(
     try {
       console.log(items);
       const response = await Promise.all(
-        items.map(async (item) => {
-          return await axios.post('/api/shopingcard', item);
+        items.map(async ({name, price}) => {
+          return await axios.post('/api/shopingcard', {name, price});
         })
       );
       // Отримати дані з кожної відповіді та повернути масив результатів
