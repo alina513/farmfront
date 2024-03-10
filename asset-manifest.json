@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/farmfront/static/css/main.7acaea2f.css",
+    "main.js": "/farmfront/static/js/main.07d3183d.js",
+    "index.html": "/farmfront/index.html",
+    "main.7acaea2f.css.map": "/farmfront/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/farmfront/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
