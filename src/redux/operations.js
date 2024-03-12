@@ -60,7 +60,7 @@ export const sendItemsToBackend = createAsyncThunk(
     try {
       console.log(items);
       const response = await Promise.all(
-        items.map(async ({name, price}) => {
+        items.map(async ({name, price, _id}) => {
           return await axios.post('/api/shopingcard', {name, price, _id});
         })
       );
