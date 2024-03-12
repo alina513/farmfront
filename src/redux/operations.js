@@ -52,12 +52,15 @@ export  const fetchCartItems = createAsyncThunk(
 export const sendItemsToBackend = createAsyncThunk(
   'shop/sendItems',
   async ( items , thunkAPI) => {
-    setAuthHeader(selectToken);
+    const state = thunkAPI.getState();
+    const _id = state.auth.user.id;
+
+    // setAuthHeader(selectToken);
     try {
       console.log(items);
       const response = await Promise.all(
         items.map(async ({name, price}) => {
-          return await axios.post('/api/shopingcard', {name, price});
+          return await axios.post('/api/shopingcard', {name, price, _id});
         })
       );
       // Отримати дані з кожної відповіді та повернути масив результатів
