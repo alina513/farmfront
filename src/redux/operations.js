@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { selectToken } from './selectors';
+
+
 
 axios.defaults.baseURL = 'https://farmback.onrender.com';
 
@@ -14,7 +15,7 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post('api/users/register', credentials);
       setAuthHeader(res.data.token);
-      return res.data.token;
+      return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -53,7 +54,7 @@ export const sendItemsToBackend = createAsyncThunk(
   'shop/sendItems',
   async ( items , thunkAPI) => {
     const state = thunkAPI.getState();
-    const _id = state.auth.user.id;
+    const _id = state.auth.user;
 
     // setAuthHeader(selectToken);
     try {
