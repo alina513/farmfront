@@ -7,6 +7,8 @@ export const Button = () => {
     const order = useSelector(selectCartItems);
     const  dispatch = useDispatch();
   const submit = (event) => {
+    
+
     dispatch(sendItemsToBackend(order))
   };
   return (
