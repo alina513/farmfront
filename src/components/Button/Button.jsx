@@ -4,12 +4,12 @@ import { useDispatch } from 'react-redux';
 import {sendItemsToBackend} from "../../redux/operations";
 import css from "./Button.module.css"
 export const Button = () => {
-    const order = useSelector(selectCartItems);
+  
     const  dispatch = useDispatch();
-  const submit = (event) => {
+  const submit = () => {
     
 
-    dispatch(sendItemsToBackend(order))
+    dispatch(sendItemsToBackend())
   };
   return (
     <>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux'; 
 
 
 
@@ -39,7 +40,7 @@ export const fetchDrugs = createAsyncThunk(
 
 
 export  const fetchCartItems = createAsyncThunk(
-  'shop/fetchCartItems',  // Ім'я action
+  'shop/fetchCartItems', 
   async () => {
     try {
       const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -52,16 +53,16 @@ export  const fetchCartItems = createAsyncThunk(
 
 export const sendItemsToBackend = createAsyncThunk(
   'shop/sendItems',
-  async ( items , thunkAPI) => {
-    const state = thunkAPI.getState();
-    const _id = state.auth.user;
+  async (  thunkAPI) => {
+    const items = JSON.parse(localStorage.getItem('cartItems'));
+    const owner = state => state.auth.user.id;
 
-    // setAuthHeader(selectToken);
+    
     try {
       console.log(items);
       const response = await Promise.all(
         items.map(async ({name, price}) => {
-          return await axios.post('/api/shopingcard', {name, price, _id});
+          return await axios.post('/api/shopingcard', {name, price}, owner);
         })
       );
       // Отримати дані з кожної відповіді та повернути масив результатів
