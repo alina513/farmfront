@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/farmfront/static/css/main.dd94ebbd.css",
-    "main.js": "/farmfront/static/js/main.c95e3bed.js",
+    "main.js": "/farmfront/static/js/main.6313e708.js",
     "static/css/970.a4f1961c.chunk.css": "/farmfront/static/css/970.a4f1961c.chunk.css",
     "static/js/970.91e41e5e.chunk.js": "/farmfront/static/js/970.91e41e5e.chunk.js",
     "static/css/597.146201b5.chunk.css": "/farmfront/static/css/597.146201b5.chunk.css",
-    "static/js/597.7613a707.chunk.js": "/farmfront/static/js/597.7613a707.chunk.js",
+    "static/js/597.93a1a012.chunk.js": "/farmfront/static/js/597.93a1a012.chunk.js",
     "index.html": "/farmfront/index.html",
     "main.dd94ebbd.css.map": "/farmfront/static/css/main.dd94ebbd.css.map",
-    "main.c95e3bed.js.map": "/farmfront/static/js/main.c95e3bed.js.map",
+    "main.6313e708.js.map": "/farmfront/static/js/main.6313e708.js.map",
     "970.a4f1961c.chunk.css.map": "/farmfront/static/css/970.a4f1961c.chunk.css.map",
     "970.91e41e5e.chunk.js.map": "/farmfront/static/js/970.91e41e5e.chunk.js.map",
     "597.146201b5.chunk.css.map": "/farmfront/static/css/597.146201b5.chunk.css.map",
-    "597.7613a707.chunk.js.map": "/farmfront/static/js/597.7613a707.chunk.js.map"
+    "597.93a1a012.chunk.js.map": "/farmfront/static/js/597.93a1a012.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd94ebbd.css",
-    "static/js/main.c95e3bed.js"
+    "static/js/main.6313e708.js"
   ]
 }
