@@ -19,7 +19,7 @@
     display: block;
     border: solid 3px blue;
     border-radius: 50px;
-    width: 400px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
    background-color: #DDF3F7;
@@ -45,4 +45,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.ordertext {
+    display: block;
+    text-align: center;
+    
 }

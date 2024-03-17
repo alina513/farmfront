@@ -1,8 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import css from './Form.module.css';
 import { register } from '../../redux/operations';
+import {sendItemsToBackend} from "../../redux/operations";
+import { ShopingCartList } from '../ShopCartList/ShopCartList';
+import { TotalPrice } from '../TotalPrice/TotalPrice';
 export const Form = () => {
+  const [submitted, setSubmitted] = useState(false);
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
@@ -13,11 +18,15 @@ export const Form = () => {
     const adress = event.target.elements.adress.value;
 
     dispatch(register({ name, email, phone, adress }));
+    setSubmitted(true);
     event.target.reset();
+    dispatch(sendItemsToBackend())
+    localStorage.setItem('cartItems', []);
   };
 
   return (
     <form className={css.form} onSubmit={handleSubmit} >
+      {submitted ? (<p className={css.ordertext}>Your order has been sent</p>) :(<>
       <label className={css.label} htmlFor="name">
         Name
       </label>
@@ -52,9 +61,12 @@ export const Form = () => {
         id="adress"
         required
       />
+      <ShopingCartList/>
+      <TotalPrice/>
       <button className={css.button} type="submit">
         Submit
       </button>
+      </>)}
     </form>
   );
 };

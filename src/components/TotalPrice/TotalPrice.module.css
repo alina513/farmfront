@@ -1,4 +1,6 @@
 .total {
     font-weight: 900;
     font-size: larger;
+    display: block;
+    text-align: center;
 }

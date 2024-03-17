@@ -12,7 +12,7 @@
 .button {
     margin-left: 30px;
     min-height: 15px;
-    min-width: 100px;
+    width: 100%;
     display: block;
     border: solid 1px blue;
     border-radius: 50px;

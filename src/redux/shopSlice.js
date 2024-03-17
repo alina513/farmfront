@@ -3,7 +3,7 @@ import { fetchCartItems, sendItemsToBackend } from "../redux/operations";
 
 
 const shopInitialState = {
-    items: [],
+    carts: [],
     isLoading: false,
   };
   
@@ -18,7 +18,7 @@ const shopInitialState = {
         })
         .addCase(fetchCartItems.fulfilled, (state, action) => {
           state.isLoading = false;
-          state.items = action.payload;
+          state.carts = action.payload;
         })
         .addCase(fetchCartItems.rejected, (state) => {
           state.isLoading = false;

@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 import { fetchCartItems } from '../redux/operations';
-import {ShopingCartList} from "../components/ShopCartList/ShopCartList.jsx";
 import { Form } from "../components/Form/Form.jsx";
-import { Button } from '../components/Button/Button';
-import { TotalPrice } from '../components/TotalPrice/TotalPrice';
+
+
 
 
 const styles = {
@@ -27,6 +26,7 @@ const styles = {
 
 export default function ContactsIn() {
     const dispatch = useDispatch();
+    
    
     useEffect(() => {
       dispatch(fetchCartItems());
@@ -34,12 +34,12 @@ export default function ContactsIn() {
   
     return (
       <div style={styles.wraper}>
-      <div style={styles.container}>
+      {/* <div style={styles.container}> */}
         <Form/>
-      < ShopingCartList/>
+      {/* < ShopingCartList/>
       </div>
       <TotalPrice/>
-      <Button/>
+      <Button/> */}
       </div>
     );
   }

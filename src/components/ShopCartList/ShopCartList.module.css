@@ -2,5 +2,7 @@
     padding-left: 0px;
     list-style: none;
     display: flex;
-    gap: 3px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content:space-around;
     }
