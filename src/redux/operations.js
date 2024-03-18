@@ -61,14 +61,12 @@ export const sendItemsToBackend = createAsyncThunk(
     try {
       console.log(items);
       const response = await Promise.all(
-        items.map(async ({name, price}) => {
-          return await axios.post('/api/shopingcard', {name, price}, owner);
+        items.map(async ({name, price, number}) => {
+          return await axios.post('/api/shopingcard', {name, price, number}, owner);
         })
       );
-      // Отримати дані з кожної відповіді та повернути масив результатів
       return response;
     } catch (error) {
-      // Обробити помилку та повернути значення для rejectWithValue
       return thunkAPI.rejectWithValue(error.message);
     }
   }

@@ -1,33 +1,27 @@
 import css from './Drug.module.css';
 
+
 export const Drug = ({value}) => { 
   
-  // const handleAddToCart = () => {
-  //   // Отримуємо дані з localStorage або ініціалізуємо порожній масив, якщо дані відсутні
-  //   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  //   // Додаємо новий товар до масиву
-  //   cartItems.push(value);
-  //   // Зберігаємо оновлений масив у localStorage
-  //   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  //   alert('Item added to cart!');
-  // };
 
   const handleAddToCart = () => {
     let cartItems = [];
-    // Перевіряємо наявність localStorage
     if (localStorage) {
-      // Отримуємо дані з localStorage або ініціалізуємо порожній масив, якщо дані відсутні
       const cartItemsString = localStorage.getItem('cartItems');
       cartItems = cartItemsString ? JSON.parse(cartItemsString) : [];
+      console.log("cartItems",cartItems);
     } else {
-      console.error("Local storage is not supported");
+      return
     }
-    // Додаємо новий товар до масиву
+    const existingProduct = cartItems.find(item => item.name === value.name);
+    if (existingProduct) { existingProduct.number = String(Number(existingProduct.number) + 1);
+      console.log("existingProduct",existingProduct);
+    } else {
     cartItems.push(value);
-    // Зберігаємо оновлений масив у localStorage
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    
     alert('Item added to cart!');
   };
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));}
 
   return(
     <div className={css.wrapper}>

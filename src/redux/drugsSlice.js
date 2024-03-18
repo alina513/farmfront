@@ -3,6 +3,7 @@ import { fetchDrugs} from "./operations";
 
 const drugssInitialState = {
     items: [],
+    number: 1,
     isLoading: false,
     error: null,
   };
